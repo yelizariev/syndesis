@@ -26,7 +26,7 @@
 
   <groupId>io.syndesis</groupId>
   <artifactId>syndesis-parent</artifactId>
-  <version>1.7-SNAPSHOT</version>
+  <version>1.7.0.fuse-740007</version>
   <packaging>pom</packaging>
 
   <name>Syndesis</name>
@@ -37,7 +37,7 @@
     <syndesis.version>${project.version}</syndesis.version>
 
     <!-- Atlasmap version -->
-    <atlasmap.version>1.40.0</atlasmap.version>
+    <atlasmap.version>1.41.0.fuse-740001</atlasmap.version>
 
     <!-- Image names -->
     <image.s2i>syndesis/syndesis-s2i:%l</image.s2i>
@@ -56,7 +56,7 @@
 
     <jackson.version>2.9.9</jackson.version>
     <json-patch.version>1.9</json-patch.version>
-    <kubernetes.client.version>3.1.12.fuse-730022</kubernetes.client.version>
+    <kubernetes.client.version>3.1.12.fuse-740014</kubernetes.client.version>
 
     <spring.version>4.3.18.RELEASE</spring.version>
     <spring-boot.version>1.5.16.RELEASE</spring-boot.version>
@@ -75,8 +75,8 @@
     <commons.compress.version>1.18</commons.compress.version>
 
     <!-- Global camel version used everywhere -->
-    <camel.version>2.21.0.fuse-740028</camel.version>
-    <camel-k-runtime.version>0.3.3.fuse-740002</camel-k-runtime.version>
+    <camel.version>2.21.0.fuse-740024</camel.version>
+    <camel-k-runtime.version>0.3.3.fuse-740007</camel-k-runtime.version>
 
     <!-- Don't fork based on cores, doesn't work nicely in the cloud -->
     <basepom.test.fork-count>1</basepom.test.fork-count>
@@ -208,51 +208,6 @@
       <id>release</id>
       <build>
         <plugins>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-deploy-plugin</artifactId>
-            <configuration>
-              <skip>true</skip>
-            </configuration>
-          </plugin>
-
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.8</version>
-            <executions>
-              <execution>
-                <id>default-deploy</id>
-                <phase>deploy</phase>
-                <goals>
-                  <goal>deploy</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <serverId>oss-sonatype-staging</serverId>
-            </configuration>
-          </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
-            <configuration>
-              <skip>false</skip>
-            </configuration>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
 
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
