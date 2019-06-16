@@ -28,7 +28,7 @@
 
     <groupId>io.syndesis</groupId>
     <artifactId>syndesis-docs</artifactId>
-    <version>1.6.13</version>
+    <version>1.6.13.fuse-731004</version>
 
     <packaging>pom</packaging>
 

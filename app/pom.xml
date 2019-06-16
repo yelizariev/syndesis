@@ -37,7 +37,7 @@
     <syndesis.version>${project.version}</syndesis.version>
 
     <!-- Atlasmap version -->
-    <atlasmap.version>1.39.6</atlasmap.version>
+    <atlasmap.version>1.39.6.fuse-731005</atlasmap.version>
 
     <!-- Image names -->
     <image.s2i>syndesis/syndesis-s2i:%l</image.s2i>
@@ -56,7 +56,7 @@
 
     <jackson.version>2.9.8</jackson.version>
     <json-patch.version>1.9</json-patch.version>
-    <kubernetes.client.version>3.1.12.fuse-730022</kubernetes.client.version>
+    <kubernetes.client.version>3.1.12.fuse-731003</kubernetes.client.version>
 
     <spring.version>4.3.18.RELEASE</spring.version>
     <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
@@ -75,8 +75,8 @@
     <commons.compress.version>1.18</commons.compress.version>
 
     <!-- Global camel version used everywhere -->
-    <camel.version>2.21.0.fuse-730054</camel.version>
-    <camel-k-runtime.version>0.3.1</camel-k-runtime.version>
+    <camel.version>2.21.0.fuse-731003</camel.version>
+    <camel-k-runtime.version>0.3.2.fuse-731003</camel-k-runtime.version>
 
     <dep.plugin.dependency.version>3.0.2</dep.plugin.dependency.version>
     <dep.plugin.pmd.version>3.10.0</dep.plugin.pmd.version>
@@ -95,7 +95,7 @@
 
     <!-- Plugin versions -->
     <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
-    <docker.maven.plugin.version>0.23.0</docker.maven.plugin.version>
+    <docker.maven.plugin.version>0.23.0.fuse-731001</docker.maven.plugin.version>
 
     <!-- Maven versions -->
     <maven-archetype-packaging.version>2.0</maven-archetype-packaging.version>
@@ -212,51 +212,6 @@
       <id>release</id>
       <build>
         <plugins>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-deploy-plugin</artifactId>
-            <configuration>
-              <skip>true</skip>
-            </configuration>
-          </plugin>
-
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.8</version>
-            <executions>
-              <execution>
-                <id>default-deploy</id>
-                <phase>deploy</phase>
-                <goals>
-                  <goal>deploy</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <serverId>oss-sonatype-staging</serverId>
-            </configuration>
-          </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
-            <configuration>
-              <skip>false</skip>
-            </configuration>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
 
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
